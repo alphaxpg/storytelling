@@ -1,0 +1,123 @@
+:root {
+    --cor-fundo: #0A192F; /* Azul escuro, como o céu noturno de uma cidade heróica */
+    --cor-principal: #1A2E4C; /* Azul mais claro, como o uniforme de um herói */
+    --cor-secundaria: #4CAF50; /* Verde vibrante, lembrando o Hulk ou lanterna verde */
+    --cor-destaque: #FFD700; /* Dourado, para dar um toque de poder e grandiosidade */
+    --cor-texto: #E0E0E0; /* Branco acinzentado para o texto, contrastando bem */
+    --cor-alternativa-hover: #E91E63; /* Rosa/Vermelho vibrante para o hover, como um ataque especial! */
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Comic Sans MS', 'Arial Black', sans-serif; /* Fonte com um toque de quadrinhos */
+    background-image: url('https://www.transparenttextures.com/patterns/cubes.png'); /* Adiciona uma textura sutil de fundo */
+    animation: background-move 60s infinite linear; /* Animação de fundo para um efeito "vivo" */
+}
+
+@keyframes background-move {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 100%;
+    }
+}
+
+.caixa-principal {
+    background-color: var(--cor-principal);
+    width: 90%;
+    max-width: 700px; /* Um pouco maior para mais impacto */
+    text-align: center;
+    padding: 30px; /* Mais padding para espaçamento */
+    border-radius: 25px; /* Bordas mais arredondadas */
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.6); /* Sombra dourada que brilha */
+    border: 3px solid var(--cor-destaque); /* Borda dourada sólida */
+    animation: pulse 2s infinite alternate; /* Efeito de pulsar no container principal */
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.02);
+    }
+}
+
+h1 {
+    color: var(--cor-destaque);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra no texto do título para destaque */
+    font-size: 2.8em; /* Título maior e mais impactante */
+    margin-bottom: 25px;
+}
+
+.caixa-perguntas {
+    background-color: var(--cor-fundo);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    border: 2px dashed var(--cor-secundaria); /* Borda tracejada para um efeito de "balão de fala" */
+}
+
+.caixa-alternativas {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaçamento entre as alternativas */
+}
+
+button {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+    border: none;
+    border-radius: 10px;
+    padding: 18px; /* Mais padding para os botões */
+    transition: all 0.3s ease; /* Transição mais suave para hover */
+    font-size: 1.1em;
+    cursor: pointer;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4); /* Sombra nos botões */
+    text-transform: uppercase; /* Texto em maiúsculas */
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: var(--cor-alternativa-hover); /* Nova cor no hover */
+    color: var(--cor-principal); /* Cor do texto ao passar o mouse */
+    transform: translateY(-3px) scale(1.05); /* Efeito de "saltar" e crescer */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6); /* Sombra mais intensa no hover */
+}
+
+.caixa-resultado {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--cor-principal);
+    border-radius: 15px;
+    border: 2px solid var(--cor-destaque);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+}
+
+.texto-resultado {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--cor-destaque);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2em;
+    }
+    .caixa-principal {
+        padding: 20px;
+    }
+    button {
+        padding: 15px;
+        font-size: 1em;
+    }
+}
